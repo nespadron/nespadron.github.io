@@ -197,14 +197,19 @@ section {
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+}
+
+.card:last-child:nth-child(3n + 1) {
+    grid-column-start: 2;
 }
 
 .card {
     background: var(--card);
     padding: 2rem;
     border-radius: 20px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #1e1e1e;
 }
@@ -229,8 +234,12 @@ section {
 
 .grid-portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+}
+
+.project-card:last-child:nth-child(3n + 1) {
+    grid-column-start: 2;
 }
 
 .project-card {
@@ -253,6 +262,7 @@ section {
 
 .project-body {
     padding: 1.5rem;
+    text-align: center;
 }
 
 .project-type {
@@ -278,6 +288,7 @@ section {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    justify-content: center;
     margin-bottom: 1.2rem;
 }
 
@@ -481,5 +492,15 @@ footer {
 
     section {
         padding: 4rem 8%;
+    }
+
+    .cards-container,
+    .grid-portfolio {
+        grid-template-columns: 1fr;
+    }
+
+    .card:last-child:nth-child(3n + 1),
+    .project-card:last-child:nth-child(3n + 1) {
+        grid-column-start: 1;
     }
 }
