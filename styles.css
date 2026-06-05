@@ -350,27 +350,10 @@ section {
     margin-bottom: 1.5rem;
 }
 
-.cert-badge {
-    font-size: 0.75rem;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    border: 1px solid rgba(0, 212, 255, 0.3);
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px;
-}
-
-.cert-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.4rem;
-}
-
-.cert-sub {
-    color: var(--muted);
-    font-size: 0.88rem;
+.cert-img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
     margin-bottom: 1rem;
 }
 
