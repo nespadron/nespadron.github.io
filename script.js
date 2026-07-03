@@ -12,8 +12,11 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
+// Respetar accesibilidad: sin fondos animados si el usuario pide menos movimiento
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /* ===== FONDO CAPA 1 — MALLA DE NODOS ===== */
-(function () {
+if (!reducedMotion) (function () {
     const cv = document.getElementById('canvas-net');
     const cx = cv.getContext('2d');
     const DIST = 140;
@@ -33,7 +36,8 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         }));
     }
     init();
-    window.addEventListener('resize', init, { passive: true });
+    // En iOS el scroll cambia innerHeight (barra de Safari): solo reiniciar si cambió el ancho
+    window.addEventListener('resize', () => { if (window.innerWidth !== W) init(); else { H = cv.height = window.innerHeight; } }, { passive: true });
     window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
 
     function frame() {
@@ -74,7 +78,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 })();
 
 /* ===== FONDO CAPA 2 — LLUVIA MATRIX ===== */
-(function () {
+if (!reducedMotion) (function () {
     const cv = document.getElementById('canvas-rain');
     const cx = cv.getContext('2d');
     const chars = 'ｦｧｨｩｪｫｬｭｮｯｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789<>{}[]=/\\';
@@ -99,7 +103,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         streams = Array.from({ length: cols }, (_, i) => { const s = mkS(i); s.y = Math.random() * H * -1.2; return s; });
     }
     init();
-    window.addEventListener('resize', init, { passive: true });
+    window.addEventListener('resize', () => { if (window.innerWidth !== W) init(); else { H = cv.height = window.innerHeight; } }, { passive: true });
 
     function frame() {
         cx.fillStyle = 'rgba(7,8,15,0.12)';
