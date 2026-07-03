@@ -16,7 +16,9 @@
 </head>
 <body>
 
-<div class="scroll-progress" aria-hidden="true"></div>
+<div id="scroll-progress" aria-hidden="true"></div>
+<canvas id="canvas-net" aria-hidden="true"></canvas>
+<canvas id="canvas-rain" aria-hidden="true"></canvas>
 
 <header class="navbar">
     <div class="logo">
@@ -29,7 +31,7 @@
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#portafolio">Portafolio</a></li>
             <li><a href="#sobre-mi">Sobre mi</a></li>
-            <li><a href="#contacto" class="btn-contact">Contacto</a></li>
+            <li><a href="#contacto" class="nav-cta">Contacto</a></li>
         </ul>
     </nav>
 
@@ -44,95 +46,93 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-    <div class="hero-content hidden">
-        <span class="badge">Disponible para nuevos proyectos</span>
+    <div class="hero-content">
+        <div class="hero-eyebrow">Guadalajara, México</div>
 
         <h1>
-            Desarrollo web y<br>
-            <span class="gradient-text">sistemas que funcionan</span>
+            Desarrollo web<br>
+            y sistemas que<br>
+            <span class="h1-accent" id="typed"></span><span class="cursor"></span>
         </h1>
 
-        <p>
-            Soy Nestor, desarrollador web y consultor Odoo CRM en Guadalajara.
-            Creo landing pages, sitios corporativos y configuro sistemas ERP
-            para que negocios operen mejor y se vean profesionales.
+        <p class="hero-sub">
+            Soy Nestor, desarrollador web y consultor Odoo CRM.
+            Especialista en landing pages, sitios corporativos y sistemas ERP.
+            Transformo ideas en productos digitales que funcionan de verdad.
         </p>
 
-        <div class="hero-buttons">
-            <a href="#contacto" class="btn primary">Hablemos</a>
-            <a href="#portafolio" class="btn secondary">Ver proyectos</a>
+        <div class="cta-group">
+            <a href="#portafolio" class="btn-primary">Ver proyectos →</a>
+            <a href="#contacto" class="btn-outline">Hablemos</a>
         </div>
     </div>
 
-    <div class="hero-photo hidden">
+    <div class="hero-photo">
         <img src="img/nestor.jpg" alt="Nestor Aguilar" class="hero-img">
     </div>
 </section>
 
 <!-- ===== STATS ===== -->
-<div class="stats-strip">
-    <div class="stat-item">
-        <span class="stat-number">4</span>
-        <span class="stat-label">Proyectos entregados</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-        <span class="stat-number">7</span>
-        <span class="stat-label">Anos arbitro FMF</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-        <span class="stat-number">326h</span>
-        <span class="stat-label">Certificacion Oracle</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat-item">
-        <span class="stat-number gradient-text">Hoy</span>
-        <span class="stat-label">Disponible</span>
+<div class="stats">
+    <div class="stats-inner">
+        <div class="stat reveal">
+            <div class="stat-num" id="c1">0</div>
+            <div class="stat-label">Proyectos completados</div>
+        </div>
+        <div class="stat reveal" style="transition-delay:.1s">
+            <div class="stat-num" id="c2">0</div>
+            <div class="stat-label">Años árbitro FMF</div>
+        </div>
+        <div class="stat reveal" style="transition-delay:.2s">
+            <div class="stat-num" id="c3">0</div>
+            <div class="stat-label">Horas Oracle</div>
+        </div>
+        <div class="stat reveal" style="transition-delay:.3s">
+            <div class="stat-num check">✓</div>
+            <div class="stat-label">Disponible ahora</div>
+        </div>
     </div>
 </div>
 
 <!-- ===== SERVICIOS ===== -->
-<section id="servicios">
-    <div class="section-title hidden">
-        <h2>Servicios</h2>
-        <p>Soluciones claras, funcionales y enfocadas en resultados</p>
-    </div>
+<section class="services" id="servicios">
+    <div class="section-label">Servicios</div>
+    <h2 class="reveal">Lo que construyo</h2>
 
-    <div class="cards-container">
-        <article class="card hidden">
-            <div class="card-icon">&#9881;</div>
-            <h3>Configuracion Odoo CRM</h3>
+    <div class="cards">
+        <article class="card reveal">
+            <div class="card-icon">⚙️</div>
+            <h3>Configuración Odoo CRM</h3>
             <p>
-                Configuro modulos de ventas, inventario y logistica para que
-                tu equipo deje de operar en Excel y WhatsApp. Incluye capacitacion
-                y 30 dias de soporte.
+                Módulos de ventas, inventario y logística para que tu equipo
+                deje de operar en Excel y WhatsApp. Incluye capacitación
+                y 30 días de soporte.
             </p>
         </article>
 
-        <article class="card hidden">
-            <div class="card-icon">&#9654;</div>
+        <article class="card reveal" style="transition-delay:.1s">
+            <div class="card-icon">🚀</div>
             <h3>Landing Pages</h3>
             <p>
-                Paginas disenadas para convertir visitas en clientes. Optimizadas
-                para movil, rapidas y listas en 7 dias.
+                Páginas diseñadas para convertir visitas en clientes. Optimizadas
+                para móvil, rápidas y listas en 7 días.
             </p>
         </article>
 
-        <article class="card hidden">
-            <div class="card-icon">&#9670;</div>
+        <article class="card reveal" style="transition-delay:.2s">
+            <div class="card-icon">🌐</div>
             <h3>Sitios Corporativos</h3>
             <p>
-                Sitios profesionales, rapidos y escalables que representan
+                Sitios profesionales, rápidos y escalables que representan
                 correctamente a tu empresa o marca.
             </p>
         </article>
 
-        <article class="card hidden">
-            <div class="card-icon">&#9650;</div>
+        <article class="card reveal" style="transition-delay:.3s">
+            <div class="card-icon">📦</div>
             <h3>Paquete Completo</h3>
             <p>
-                Presencia web mas sistema interno. Todo con una persona de contacto,
+                Presencia web más sistema interno. Todo con una persona de contacto,
                 sin coordinar agencias ni equipos separados.
             </p>
         </article>
@@ -140,63 +140,61 @@
 </section>
 
 <!-- ===== PORTAFOLIO ===== -->
-<section id="portafolio">
-    <div class="section-title hidden">
-        <h2>Proyectos Recientes</h2>
-        <p>4 proyectos entregados con dominios activos</p>
-    </div>
+<section class="portfolio" id="portafolio">
+    <div class="section-label">Portafolio</div>
+    <h2 class="reveal">Proyectos recientes</h2>
 
-    <div class="grid-portfolio">
+    <div class="project-grid">
 
-        <div class="project-card hidden">
+        <div class="project-card reveal">
             <div class="project-bar"></div>
             <div class="project-body">
                 <span class="project-type">Sitio Web Corporativo</span>
-                <h3>ESE Padron</h3>
+                <h3>ESE Padrón</h3>
                 <p class="project-domain">esepadron.com</p>
                 <div class="tech-tags">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
                 </div>
-                <a href="https://esepadron.com" target="_blank" rel="noopener" class="project-link">Ver sitio &#8594;</a>
+                <a href="https://esepadron.com" target="_blank" rel="noopener" class="project-link">Ver sitio →</a>
             </div>
         </div>
 
-        <div class="project-card hidden">
-            <div class="project-bar"></div>
+        <div class="project-card reveal" style="transition-delay:.1s">
+            <div class="project-bar" style="background:linear-gradient(90deg,#00d4ff,#00ff88)"></div>
             <div class="project-body">
                 <span class="project-type">Sitio Web Empresa</span>
-                <h3>Plasticos San Andres</h3>
+                <h3>Plásticos San Andrés</h3>
                 <p class="project-domain">plasticossanandres.com</p>
                 <div class="tech-tags">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
                 </div>
-                <a href="https://plasticossanandres.com" target="_blank" rel="noopener" class="project-link">Ver sitio &#8594;</a>
+                <a href="https://plasticossanandres.com" target="_blank" rel="noopener" class="project-link">Ver sitio →</a>
             </div>
         </div>
 
-        <div class="project-card hidden">
-            <div class="project-bar"></div>
+        <div class="project-card reveal" style="transition-delay:.2s">
+            <div class="project-bar" style="background:linear-gradient(90deg,#00d4ff,#FF8C3A)"></div>
             <div class="project-body">
                 <span class="project-type">Landing Page</span>
                 <h3>Bares y Restaurantes MX</h3>
                 <p class="project-domain">baresyrestaurantes.mx</p>
                 <div class="tech-tags">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    <span class="tag">Landing</span><span class="tag">Google Ads</span>
                 </div>
-                <a href="https://baresyrestaurantes.mx" target="_blank" rel="noopener" class="project-link">Ver sitio &#8594;</a>
+                <a href="https://baresyrestaurantes.mx" target="_blank" rel="noopener" class="project-link">Ver sitio →</a>
             </div>
         </div>
 
-        <div class="project-card hidden">
-            <div class="project-bar"></div>
+        <div class="project-card reveal" style="transition-delay:.3s">
+            <div class="project-bar" style="background:linear-gradient(90deg,#00d4ff,#9900ff)"></div>
             <div class="project-body">
-                <span class="project-type">Tienda en Linea + Odoo CRM</span>
+                <span class="project-type">Tienda en Línea + Odoo CRM</span>
                 <h3>Office School</h3>
                 <p class="project-domain">officeschool.mx</p>
                 <div class="tech-tags">
-                    <span>Odoo</span><span>eCommerce</span><span>CRM</span>
+                    <span class="tag">Odoo</span><span class="tag">Amazon</span><span class="tag">eCommerce</span>
                 </div>
-                <a href="https://officeschool.mx" target="_blank" rel="noopener" class="project-link">Ver sitio &#8594;</a>
+                <a href="https://officeschool.mx" target="_blank" rel="noopener" class="project-link">Ver sitio →</a>
             </div>
         </div>
 
@@ -204,58 +202,58 @@
 </section>
 
 <!-- ===== SOBRE MI ===== -->
-<section id="sobre-mi">
-    <div class="about-container hidden">
+<section class="about" id="sobre-mi">
+    <div class="section-label">Sobre mí</div>
+    <div class="about-grid reveal">
         <div class="about-text">
-            <h2>Sobre mi</h2>
+            <h2>Ingeniero. Árbitro. Developer.</h2>
             <p>
-                Ingeniero en Comunicaciones y Electronica egresado de CUCEI,
-                Universidad de Guadalajara. Cuento con certificacion
+                Ingeniero en Comunicaciones y Electrónica egresado de CUCEI,
+                Universidad de Guadalajara. Cuento con certificación
                 Oracle + Alura LATAM en desarrollo front-end (326 horas).
             </p>
             <p>
-                Fuera del codigo, soy arbitro asistente profesional certificado
-                por la FMF desde 2019. Siete anos tomando decisiones bajo presion.
-                Eso se nota en como trabajo.
+                Fuera del código, soy árbitro asistente profesional certificado
+                por la FMF desde 2019. Siete años tomando decisiones bajo presión.
+                Eso se nota en cómo trabajo.
             </p>
-            <p>Ingles fluido. Guadalajara, Jalisco.</p>
+            <p>Inglés fluido. Guadalajara, Jalisco.</p>
         </div>
 
-        <div class="cert-card hidden">
+        <div class="cert-card">
             <img src="img/certificado.jpg" alt="Certificado Oracle + Alura LATAM — Nestor Aguilar" class="cert-img">
-            <p class="cert-detail">326 horas &middot; 6 formaciones &middot; Oct 2023</p>
+            <p class="cert-detail">326 horas · 6 formaciones · Oct 2023</p>
         </div>
     </div>
 </section>
 
 <!-- ===== CONTACTO ===== -->
-<section id="contacto">
-    <div class="contact-container hidden">
-        <h2>Hablemos de tu proyecto</h2>
-        <p>Cuentame que necesitas. Respondo en menos de 24 horas.</p>
+<section class="contact" id="contacto">
+    <div class="section-label">Contacto</div>
+    <h2 class="reveal">Hablemos de tu proyecto</h2>
+    <p class="reveal">Cuéntame qué necesitas. Respondo en menos de 24 horas.</p>
 
-        <div class="contact-buttons">
-            <a href="https://wa.me/523312924866?text=Hola%20Nestor%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20platicarte%20de%20un%20proyecto"
-               target="_blank" rel="noopener" class="btn primary contact-btn">
-                WhatsApp
-            </a>
-            <a href="mailto:nesbcaguilar@gmail.com" class="btn secondary contact-btn">
-                Enviar correo
-            </a>
-        </div>
-
-        <p class="contact-links">
-            <a href="https://www.linkedin.com/in/nestor-martin-a-44199a117/" target="_blank" rel="noopener">LinkedIn</a>
-            &nbsp;&middot;&nbsp;
-            <a href="https://github.com/nespadron" target="_blank" rel="noopener">GitHub</a>
-        </p>
+    <div class="contact-links reveal">
+        <a href="https://wa.me/523312924866?text=Hola%20Nestor%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20platicarte%20de%20un%20proyecto"
+           target="_blank" rel="noopener" class="btn-primary">
+            WhatsApp →
+        </a>
+        <a href="mailto:nesbcaguilar@gmail.com" class="btn-outline">
+            Enviar correo
+        </a>
     </div>
+
+    <p class="social-links reveal">
+        <a href="https://www.linkedin.com/in/nestor-martin-a-44199a117/" target="_blank" rel="noopener">LinkedIn</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/nespadron" target="_blank" rel="noopener">GitHub</a>
+    </p>
 </section>
 
 </main>
 
 <footer>
-    <p>&copy; 2026 Nestor Aguilar &middot; Guadalajara, Mexico</p>
+    <p>© 2026 Nestor Aguilar · Guadalajara, México</p>
 </footer>
 
 <script src="libs/gsap.min.js"></script>
