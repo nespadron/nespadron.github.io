@@ -484,6 +484,28 @@ footer {
 
 /* ===== ANIMACIONES ===== */
 
+/* Barra de progreso de scroll */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+/* Recomendado por Lenis: evitar conflicto con scroll-behavior nativo */
+html.lenis, html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
 .hidden {
     opacity: 0;
     transform: translateY(40px);
